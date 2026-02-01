@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Me Content – Vault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="vault">
+  <header class="mc-header">
+    <div class="brand">
+      <div class="brand-logo">MC</div>
+      <div class="brand-text">
+        <h1>Me Content</h1>
+        <span>Your vault</span>
+      </div>
+    </div>
+    <nav class="mc-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link">Today</a>
+      <a href="vault.html" class="nav-link active">Vault</a>
+      <a href="planner.html" class="nav-link">Plan</a>
+      <a href="categories.html" class="nav-link">Categories</a>
+    </nav>
+    <button class="btn primary small" id="newThoughtBtn">➕ New Thought</button>
+  </header>
+
+  <main class="mc-main">
+    <div class="page-header">
+      <div>
+        <h2>Vault</h2>
+        <p>Every video, note, and upload you’ve captured lives here. Filter when things get crowded.</p>
+      </div>
+      <div class="pill">Direction: Don’t overthink titles. Capture the thought.</div>
+    </div>
+
+    <div class="grid-2">
+      <section class="card">
+        <header class="card-header">
+          <h3>Your vault</h3>
+          <span class="badge">Library of everything</span>
+        </header>
+
+        <div class="filters">
+          <div class="field-group">
+            <label>Search text</label>
+            <input type="text" id="vaultSearch" placeholder="Title, text, tags…" />
+          </div>
+          <div class="field-group">
+            <label>Category</label>
+            <select id="vaultCategoryFilter">
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Type</label>
+            <select id="vaultTypeFilter">
+              <option value="">All</option>
+              <option value="idea">Idea</option>
+              <option value="script">Script</option>
+              <option value="reminder">Reminder</option>
+              <option value="content">Content</option>
+            </select>
+          </div>
+        </div>
+
+        <ul class="list" id="vaultList"></ul>
+        <div class="empty" id="vaultEmpty">
+          Nothing in your vault yet. Tap <strong>New Thought</strong> to capture your first idea.
+        </div>
+      </section>
+
+      <section class="card">
+        <header class="card-header">
+          <h3>Quick playback</h3>
+          <span class="badge soft">Selected item</span>
+        </header>
+        <p class="card-subtitle">
+          When you select an item from the vault, you’ll see its details and video (if any) here.
+        </p>
+        <div id="detailPanel" class="empty">
+          Select an item from the vault to see its full details.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Shared modal -->
+  <div id="modalBackdrop" class="modal-backdrop">
+    <div class="modal">
+      <header class="card-header">
+        <h3>New thought</h3>
+        <button class="btn ghost small" id="closeModalBtn">✕ Close</button>
+      </header>
+      <p class="card-subtitle">
+        Capture what’s in your head right now. You can refine, categorize, and schedule it later.
+      </p>
+      <form id="newThoughtForm">
+        <div class="field-group">
+          <label>Title (optional)</label>
+          <input type="text" id="ntTitle" placeholder="If you skip this, we’ll auto-generate one." />
+        </div>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label>Type</label>
+            <select id="ntType">
+              <option value="idea">Idea</option>
+              <option value="script">Script</option>
+              <option value="reminder">Reminder</option>
+              <option value="content">Content</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Category</label>
+            <select id="ntCategory"></select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>Tags (comma separated)</label>
+          <input type="text" id="ntTags" placeholder="e.g. reels, mindset, launch, evergreen" />
+        </div>
+
+        <div class="field-group">
+          <label>Thought / script text</label>
+          <textarea id="ntText" placeholder="Dump the idea, script, or reminder in your own words."></textarea>
+        </div>
+
+        <div class="field-group">
+          <label>Video message to yourself (optional)</label>
+          <input type="file" id="ntVideo" accept="video/*" />
+          <span class="field-hint">
+            Record a quick selfie video with your device camera, then attach it here.
+          </span>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label>Reminder date (optional)</label>
+            <input type="date" id="ntReminderDate" />
+          </div>
+          <div class="field-group">
+            <label>Publish date (optional)</label>
+            <input type="date" id="ntPublishDate" />
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <span class="field-hint">
+            Direction: If it feels important, give it at least a category or a date.
+          </span>
+          <button type="submit" class="btn primary">
+            💾 Save thought
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
