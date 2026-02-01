@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Me Content – Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="settings">
+  <header class="mc-header">
+    <div class="brand">
+      <div class="brand-logo">MC</div>
+      <div class="brand-text">
+        <h1>Me Content</h1>
+        <span>Settings</span>
+      </div>
+    </div>
+    <nav class="mc-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link">Today</a>
+      <a href="vault.html" class="nav-link">Vault</a>
+      <a href="planner.html" class="nav-link">Plan</a>
+      <a href="categories.html" class="nav-link">Categories</a>
+      <a href="help.html" class="nav-link">Help</a>
+      <a href="settings.html" class="nav-link active">Settings</a>
+    </nav>
+  </header>
+
+  <main class="mc-main">
+    <div class="page-header">
+      <div>
+        <h2>Settings</h2>
+        <p>Manage your data, preferences, and future sync options.</p>
+      </div>
+      <div class="pill">Direction: Own your data.</div>
+    </div>
+
+    <section class="card">
+      <header class="card-header">
+        <h3>Export your data</h3>
+        <span class="badge accent">Backup</span>
+      </header>
+      <p class="card-subtitle">Download your entire vault as a JSON file.</p>
+      <button class="btn primary" id="exportDataBtn">⬇️ Export Data</button>
+    </section>
+
+    <section class="card">
+      <header class="card-header">
+        <h3>Import data</h3>
+        <span class="badge">Restore</span>
+      </header>
+      <p class="card-subtitle">Upload a previously exported JSON file.</p>
+      <input type="file" id="importDataInput" accept=".json" />
+      <button class="btn ghost" id="importDataBtn">⬆️ Import</button>
+    </section>
+
+    <section class="card">
+      <header class="card-header">
+        <h3>Reset everything</h3>
+        <span class="badge soft">Danger zone</span>
+      </header>
+      <p class="card-subtitle">This will permanently delete all your data.</p>
+      <button class="btn ghost small" id="resetDataBtn">🗑️ Reset All Data</button>
+    </section>
+
+    <section class="card">
+      <header class="card-header">
+        <h3>Future features</h3>
+        <span class="badge">Coming soon</span>
+      </header>
+      <ul class="list">
+        <li class="list-item"><div class="list-item-main">Cloud sync across devices</div></li>
+        <li class="list-item"><div class="list-item-main">Account login</div></li>
+        <li class="list-item"><div class="list-item-main">Push notifications for reminders</div></li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
