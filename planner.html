@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Me Content – Plan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="planner">
+  <header class="mc-header">
+    <div class="brand">
+      <div class="brand-logo">MC</div>
+      <div class="brand-text">
+        <h1>Me Content</h1>
+        <span>Plan</span>
+      </div>
+    </div>
+    <nav class="mc-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link">Today</a>
+      <a href="vault.html" class="nav-link">Vault</a>
+      <a href="planner.html" class="nav-link active">Plan</a>
+      <a href="categories.html" class="nav-link">Categories</a>
+    </nav>
+    <button class="btn primary small" id="newThoughtBtn">➕ New Thought</button>
+  </header>
+
+  <main class="mc-main">
+    <div class="page-header">
+      <div>
+        <h2>Plan</h2>
+        <p>If you want it to become real content, it should live here with a status and date.</p>
+      </div>
+      <div class="pill">Direction: Dates create momentum.</div>
+    </div>
+
+    <div class="grid-2">
+      <section class="card">
+        <header class="card-header">
+          <h3>Pipeline</h3>
+          <span class="badge accent">From idea to posted</span>
+        </header>
+        <p class="card-subtitle">
+          Change the status on each card as it moves through your process.
+        </p>
+
+        <div class="kanban-grid">
+          <div class="kanban-column">
+            <div class="kanban-header">
+              <span>Raw ideas</span>
+              <span class="kanban-count" id="count-idea">0</span>
+            </div>
+            <ul class="list" id="col-idea"></ul>
+          </div>
+          <div class="kanban-column">
+            <div class="kanban-header">
+              <span>Drafting / Ready to record</span>
+              <span class="kanban-count" id="count-draft">0</span>
+            </div>
+            <ul class="list" id="col-draft"></ul>
+          </div>
+          <div class="kanban-column">
+            <div class="kanban-header">
+              <span>Scheduled / Posted</span>
+              <span class="kanban-count" id="count-done">0</span>
+            </div>
+            <ul class="list" id="col-done"></ul>
+          </div>
+        </div>
+
+        <p class="hint">
+          If a card sits in “Raw” for too long, either schedule it or archive it. Keep the board honest.
+        </p>
+      </section>
+
+      <section class="card">
+        <header class="card-header">
+          <h3>Calendar slots</h3>
+          <span class="badge">By publish date</span>
+        </header>
+        <p class="card-subtitle">
+          Filter content by publish date to see what’s coming up. Use this when planning your week.
+        </p>
+
+        <div class="filters">
+          <div class="field-group">
+            <label>From</label>
+            <input type="date" id="planFromDate" />
+          </div>
+          <div class="field-group">
+            <label>To</label>
+            <input type="date" id="planToDate" />
+          </div>
+        </div>
+
+        <ul class="list" id="planCalendarList"></ul>
+        <div class="empty" id="planCalendarEmpty">
+          No content in this date range. Add publish dates to your content to see it here.
+        </div>
+        <p class="hint">
+          Give each serious idea a rough date, even if you move it later.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Shared modal -->
+  <div id="modalBackdrop" class="modal-backdrop">
+    <div class="modal">
+      <header class="card-header">
+        <h3>New thought</h3>
+        <button class="btn ghost small" id="closeModalBtn">✕ Close</button>
+      </header>
+      <p class="card-subtitle">
+        Capture what’s in your head right now. You can refine, categorize, and schedule it later.
+      </p>
+      <form id="newThoughtForm">
+        <div class="field-group">
+          <label>Title (optional)</label>
+          <input type="text" id="ntTitle" placeholder="If you skip this, we’ll auto-generate one." />
+        </div>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label>Type</label>
+            <select id="ntType">
+              <option value="idea">Idea</option>
+              <option value="script">Script</option>
+              <option value="reminder">Reminder</option>
+              <option value="content">Content</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label>Category</label>
+            <select id="ntCategory"></select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label>Tags (comma separated)</label>
+          <input type="text" id="ntTags" placeholder="e.g. reels, mindset, launch, evergreen" />
+        </div>
+
+        <div class="field-group">
+          <label>Thought / script text</label>
+          <textarea id="ntText" placeholder="Dump the idea, script, or reminder in your own words."></textarea>
+        </div>
+
+        <div class="field-group">
+          <label>Video message to yourself (optional)</label>
+          <input type="file" id="ntVideo" accept="video/*" />
+          <span class="field-hint">
+            Record a quick selfie video with your device camera, then attach it here.
+          </span>
+        </div>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label>Reminder date (optional)</label>
+            <input type="date" id="ntReminderDate" />
+          </div>
+          <div class="field-group">
+            <label>Publish date (optional)</label>
+            <input type="date" id="ntPublishDate" />
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <span class="field-hint">
+            Direction: If it feels important, give it at least a category or a date.
+          </span>
+          <button type="submit" class="btn primary">
+            💾 Save thought
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
