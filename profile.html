@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body data-page="profile">
+  <!-- HEADER -->
   <header class="mc-header">
     <div class="brand">
       <div class="brand-logo">MC</div>
@@ -15,6 +17,7 @@
         <span>Profile</span>
       </div>
     </div>
+
     <nav class="mc-nav">
       <a href="index.html" class="nav-link">Home</a>
       <a href="dashboard.html" class="nav-link">Today</a>
@@ -26,38 +29,139 @@
     </nav>
   </header>
 
+  <!-- MAIN -->
   <main class="mc-main">
     <div class="page-header">
       <div>
         <h2>Your Profile</h2>
-        <p>Customize your identity, brand, and theme preferences.</p>
+        <p>Customize your identity, brand, avatar, and theme preferences.</p>
       </div>
       <div class="pill">Direction: Build your creator identity.</div>
     </div>
 
-    <section class="card">
+    <div class="grid-2">
+      <!-- LEFT SIDE: PROFILE SETTINGS -->
+      <section class="card">
+        <header class="card-header">
+          <h3>Brand Identity</h3>
+          <span class="badge accent">Creator Profile</span>
+        </header>
+
+        <p class="card-subtitle">
+          This information personalizes your Me Content experience and helps you stay aligned with your brand.
+        </p>
+
+        <div class="field-group">
+          <label>Your Name</label>
+          <input type="text" id="profileName" placeholder="e.g. Clayvonte" />
+        </div>
+
+        <div class="field-group">
+          <label>Brand Tagline</label>
+          <input type="text" id="profileTagline" placeholder="e.g. Cinematic creator & systems architect" />
+        </div>
+
+        <div class="field-group">
+          <label>Scene Name (optional)</label>
+          <input type="text" id="profileScene" placeholder="e.g. The Architect, The Visionary" />
+        </div>
+
+        <div class="field-group">
+          <label>Avatar (optional)</label>
+          <input type="file" id="profileAvatar" accept="image/*" />
+          <span class="field-hint">Upload a square image for best results.</span>
+        </div>
+
+        <div class="field-group">
+          <label>Theme</label>
+          <select id="profileTheme">
+            <option value="default">Default (Cinematic Dark)</option>
+            <option value="neon">Neon Pulse</option>
+            <option value="midnight">Midnight Glass</option>
+            <option value="sunset">Sunset Gradient</option>
+          </select>
+        </div>
+
+        <button class="btn primary" id="saveProfileBtn">💾 Save Profile</button>
+      </section>
+
+      <!-- RIGHT SIDE: LIVE PREVIEW -->
+      <section class="card">
+        <header class="card-header">
+          <h3>Live Preview</h3>
+          <span class="badge soft">Updates as you type</span>
+        </header>
+
+        <p class="card-subtitle">
+          This is how your profile appears across the app.
+        </p>
+
+        <div id="profilePreview" style="text-align:center; padding:10px;">
+          <div id="previewAvatar" style="
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            background:#11131f;
+            border:1px solid var(--border);
+            margin:0 auto 10px;
+            background-size:cover;
+            background-position:center;
+          "></div>
+
+          <h3 id="previewName" style="margin:0;">Your Name</h3>
+          <p id="previewTagline" style="margin:4px 0; color:var(--muted); font-size:13px;">
+            Your tagline appears here.
+          </p>
+          <p id="previewScene" style="margin:4px 0; font-size:12px; color:var(--accent-strong);">
+            Scene name
+          </p>
+
+          <div class="pill" id="previewThemePill" style="margin-top:10px;">
+            Theme: Default
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SECOND ROW: BRAND DETAILS -->
+    <section class="card" style="margin-top:20px;">
       <header class="card-header">
-        <h3>Brand identity</h3>
-        <span class="badge accent">Creator profile</span>
+        <h3>Brand Details</h3>
+        <span class="badge">Optional</span>
       </header>
 
-      <div class="field-group">
-        <label>Your name</label>
-        <input type="text" id="profileName" placeholder="e.g. Clayvonte" />
+      <p class="card-subtitle">
+        These fields help you stay consistent across platforms.
+      </p>
+
+      <div class="grid-2">
+        <div class="field-group">
+          <label>Primary Platform</label>
+          <input type="text" id="profilePlatform" placeholder="e.g. Instagram, YouTube, TikTok" />
+        </div>
+
+        <div class="field-group">
+          <label>Content Style</label>
+          <input type="text" id="profileStyle" placeholder="e.g. Cinematic, Educational, Story-driven" />
+        </div>
+
+        <div class="field-group">
+          <label>Posting Frequency</label>
+          <input type="text" id="profileFrequency" placeholder="e.g. 3x per week" />
+        </div>
+
+        <div class="field-group">
+          <label>Brand Colors</label>
+          <input type="text" id="profileColors" placeholder="e.g. Purple, Teal, Black" />
+        </div>
       </div>
 
-      <div class="field-group">
-        <label>Brand tagline</label>
-        <input type="text" id="profileTagline" placeholder="e.g. Cinematic creator & systems architect" />
-      </div>
-
-      <div class="field-group">
-        <label>Avatar (optional)</label>
-        <input type="file" id="profileAvatar" accept="image/*" />
-      </div>
-
-      <button class="btn primary" id="saveProfileBtn">💾 Save Profile</button>
+      <button class="btn ghost small" id="saveBrandBtn" style="margin-top:10px;">
+        💾 Save Brand Details
+      </button>
     </section>
+  </main>
 
-    <section class="card">
-      <header class="card
+  <script src="app.js"></script>
+</body>
+</html>
