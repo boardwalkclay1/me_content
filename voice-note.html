@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Me Content – Voice Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="voice-notes">
+  <header class="mc-header">
+    <div class="brand">
+      <div class="brand-logo">MC</div>
+      <div class="brand-text">
+        <h1>Me Content</h1>
+        <span>Voice Notes</span>
+      </div>
+    </div>
+
+    <nav class="mc-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link">Today</a>
+      <a href="vault.html" class="nav-link">Vault</a>
+      <a href="voice-notes.html" class="nav-link active">Voice Notes</a>
+    </nav>
+  </header>
+
+  <main class="mc-main">
+    <div class="page-header">
+      <div>
+        <h2>Voice Notes</h2>
+        <p>Capture ideas with your voice and store them instantly.</p>
+      </div>
+      <div class="pill">Direction: Speak your ideas into existence.</div>
+    </div>
+
+    <section class="card">
+      <header class="card-header">
+        <h3>Record a Voice Note</h3>
+        <span class="badge accent">Capture</span>
+      </header>
+
+      <p class="card-subtitle">Press record, speak freely, and save it as a thought.</p>
+
+      <div style="text-align:center; margin:20px 0;">
+        <button class="btn primary" id="startRecordingBtn">🎤 Start Recording</button>
+        <button class="btn ghost" id="stopRecordingBtn" style="display:none;">⏹️ Stop</button>
+      </div>
+
+      <audio id="voicePlayback" controls style="display:none; width:100%;"></audio>
+
+      <button class="btn primary" id="saveVoiceNoteBtn" style="display:none; margin-top:10px;">
+        💾 Save Voice Note
+      </button>
+    </section>
+
+    <section class="card" style="margin-top:20px;">
+      <header class="card-header">
+        <h3>Your Voice Notes</h3>
+        <span class="badge">Library</span>
+      </header>
+      <ul class="list" id="voiceNotesList"></ul>
+      <div class="empty" id="voiceNotesEmpty">No voice notes yet.</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
