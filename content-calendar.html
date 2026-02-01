@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Me Content – Content Calendar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="content-calendar">
+  <header class="mc-header">
+    <div class="brand">
+      <div class="brand-logo">MC</div>
+      <div class="brand-text">
+        <h1>Me Content</h1>
+        <span>Content Calendar</span>
+      </div>
+    </div>
+
+    <nav class="mc-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link">Today</a>
+      <a href="planner.html" class="nav-link">Plan</a>
+      <a href="content-calendar.html" class="nav-link active">Calendar</a>
+    </nav>
+  </header>
+
+  <main class="mc-main">
+    <div class="page-header">
+      <div>
+        <h2>Content Calendar</h2>
+        <p>See your entire month at a glance.</p>
+      </div>
+      <div class="pill">Direction: Plan visually.</div>
+    </div>
+
+    <section class="card">
+      <header class="card-header">
+        <h3>Monthly View</h3>
+        <span class="badge accent">Overview</span>
+      </header>
+
+      <div id="calendarGrid" style="
+        display:grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap:8px;
+        margin-top:10px;
+      "></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
