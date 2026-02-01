@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Me Content – Categories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="categories">
+  <header class="mc-header">
+    <div class="brand">
+      <div class="brand-logo">MC</div>
+      <div class="brand-text">
+        <h1>Me Content</h1>
+        <span>Categories</span>
+      </div>
+    </div>
+    <nav class="mc-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link">Today</a>
+      <a href="vault.html" class="nav-link">Vault</a>
+      <a href="planner.html" class="nav-link">Plan</a>
+      <a href="categories.html" class="nav-link active">Categories</a>
+    </nav>
+  </header>
+
+  <main class="mc-main">
+    <div class="page-header">
+      <div>
+        <h2>Categories</h2>
+        <p>Create categories that match how you think: platforms, projects, or themes.</p>
+      </div>
+      <div class="pill">Direction: Start simple. Refine later.</div>
+    </div>
+
+    <div class="grid-2">
+      <section class="card">
+        <header class="card-header">
+          <h3>Your categories</h3>
+          <span class="badge">How your brain groups things</span>
+        </header>
+        <p class="card-subtitle">
+          Items keep their category name even if you delete it from this list.
+        </p>
+
+        <div class="field-row">
+          <div class="field-group">
+            <label>New category name</label>
+            <input type="text" id="newCategoryName" placeholder="e.g. YouTube, Reels, Brand Story" />
+          </div>
+          <button class="btn ghost" id="addCategoryBtn">➕ Add</button>
+        </div>
+
+        <ul class="list" id="categoriesList"></ul>
+        <div class="empty" id="categoriesEmpty">
+          Start with 3: <strong>Platform</strong>, <strong>Project</strong>, and <strong>Personal</strong>. You can refine later.
+        </div>
+      </section>
+
+      <section class="card">
+        <header class="card-header">
+          <h3>Suggested setups</h3>
+          <span class="badge soft">Optional templates</span>
+        </header>
+        <p class="card-subtitle">
+          If you’re not sure how to organize, steal one of these mental models and tweak it.
+        </p>
+
+        <div class="help-grid">
+          <div class="help-step">
+            <h4>By platform</h4>
+            <p>Use when you post across multiple channels.</p>
+            <p class="code-pill">YouTube · IG Reels · TikTok · Newsletter · Podcast</p>
+          </div>
+          <div class="help-step">
+            <h4>By project</h4>
+            <p>Use when you’re in launch or series mode.</p>
+            <p class="code-pill">Launch X · Evergreen Library · Brand Story Series · Client A</p>
+          </div>
+          <div class="help-step">
+            <h4>By energy</h4>
+            <p>Use when your capacity fluctuates.</p>
+            <p class="code-pill">High Energy · Deep Work · Quick Hits · Evergreen</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
