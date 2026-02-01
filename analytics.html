@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Me Content – Analytics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="analytics">
+  <header class="mc-header">
+    <div class="brand">
+      <div class="brand-logo">MC</div>
+      <div class="brand-text">
+        <h1>Me Content</h1>
+        <span>Analytics</span>
+      </div>
+    </div>
+
+    <nav class="mc-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link">Today</a>
+      <a href="vault.html" class="nav-link">Vault</a>
+      <a href="planner.html" class="nav-link">Plan</a>
+      <a href="categories.html" class="nav-link">Categories</a>
+      <a href="analytics.html" class="nav-link active">Analytics</a>
+    </nav>
+  </header>
+
+  <main class="mc-main">
+    <div class="page-header">
+      <div>
+        <h2>Analytics</h2>
+        <p>Track your content velocity, consistency, and creative patterns.</p>
+      </div>
+      <div class="pill">Direction: Measure what matters.</div>
+    </div>
+
+    <div class="grid-2">
+      <section class="card">
+        <header class="card-header">
+          <h3>Content Velocity</h3>
+          <span class="badge accent">Output</span>
+        </header>
+        <p class="card-subtitle">How many ideas you’ve captured this month.</p>
+        <div id="analyticsVelocity" class="empty">Loading…</div>
+      </section>
+
+      <section class="card">
+        <header class="card-header">
+          <h3>Execution Consistency</h3>
+          <span class="badge soft">Habits</span>
+        </header>
+        <p class="card-subtitle">How often you move ideas to Draft or Done.</p>
+        <div id="analyticsConsistency" class="empty">Loading…</div>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:20px;">
+      <header class="card-header">
+        <h3>Category Breakdown</h3>
+        <span class="badge">Distribution</span>
+      </header>
+      <p class="card-subtitle">See where your creative energy goes.</p>
+      <ul class="list" id="analyticsCategories"></ul>
+      <div class="empty" id="analyticsCategoriesEmpty">No data yet.</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
