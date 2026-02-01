@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Me Content – Brand Kit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="brand-kit">
+  <header class="mc-header">
+    <div class="brand">
+      <div class="brand-logo">MC</div>
+      <div class="brand-text">
+        <h1>Me Content</h1>
+        <span>Brand Kit</span>
+      </div>
+    </div>
+
+    <nav class="mc-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link">Today</a>
+      <a href="vault.html" class="nav-link">Vault</a>
+      <a href="brand-kit.html" class="nav-link active">Brand Kit</a>
+    </nav>
+  </header>
+
+  <main class="mc-main">
+    <div class="page-header">
+      <div>
+        <h2>Your Brand Kit</h2>
+        <p>Store your colors, fonts, logos, and identity assets.</p>
+      </div>
+      <div class="pill">Direction: Build a recognizable identity.</div>
+    </div>
+
+    <section class="card">
+      <header class="card-header">
+        <h3>Brand Colors</h3>
+        <span class="badge accent">Visual Identity</span>
+      </header>
+
+      <div class="field-group">
+        <label>Primary Color</label>
+        <input type="text" id="brandPrimary" placeholder="#6c5ce7" />
+      </div>
+
+      <div class="field-group">
+        <label>Secondary Color</label>
+        <input type="text" id="brandSecondary" placeholder="#00cec9" />
+      </div>
+
+      <button class="btn primary" id="saveBrandColorsBtn">💾 Save Colors</button>
+    </section>
+
+    <section class="card" style="margin-top:20px;">
+      <header class="card-header">
+        <h3>Logos & Assets</h3>
+        <span class="badge">Uploads</span>
+      </header>
+
+      <div class="field-group">
+        <label>Upload Logo</label>
+        <input type="file" id="brandLogo" accept="image/*" />
+      </div>
+
+      <div id="brandLogoPreview" class="empty">No logo uploaded yet.</div>
+
+      <button class="btn ghost small" id="saveBrandLogoBtn" style="margin-top:10px;">
+        💾 Save Logo
+      </button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
