@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Me Content – Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="profile">
+  <header class="mc-header">
+    <div class="brand">
+      <div class="brand-logo">MC</div>
+      <div class="brand-text">
+        <h1>Me Content</h1>
+        <span>Profile</span>
+      </div>
+    </div>
+    <nav class="mc-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link">Today</a>
+      <a href="vault.html" class="nav-link">Vault</a>
+      <a href="planner.html" class="nav-link">Plan</a>
+      <a href="categories.html" class="nav-link">Categories</a>
+      <a href="help.html" class="nav-link">Help</a>
+      <a href="profile.html" class="nav-link active">Profile</a>
+    </nav>
+  </header>
+
+  <main class="mc-main">
+    <div class="page-header">
+      <div>
+        <h2>Your Profile</h2>
+        <p>Customize your identity, brand, and theme preferences.</p>
+      </div>
+      <div class="pill">Direction: Build your creator identity.</div>
+    </div>
+
+    <section class="card">
+      <header class="card-header">
+        <h3>Brand identity</h3>
+        <span class="badge accent">Creator profile</span>
+      </header>
+
+      <div class="field-group">
+        <label>Your name</label>
+        <input type="text" id="profileName" placeholder="e.g. Clayvonte" />
+      </div>
+
+      <div class="field-group">
+        <label>Brand tagline</label>
+        <input type="text" id="profileTagline" placeholder="e.g. Cinematic creator & systems architect" />
+      </div>
+
+      <div class="field-group">
+        <label>Avatar (optional)</label>
+        <input type="file" id="profileAvatar" accept="image/*" />
+      </div>
+
+      <button class="btn primary" id="saveProfileBtn">💾 Save Profile</button>
+    </section>
+
+    <section class="card">
+      <header class="card
